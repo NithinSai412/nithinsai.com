@@ -255,3 +255,13 @@ footer {
     top: 100%;
   }
 }
+
+b{
+  font-weight: 600;
+}
+
+br{
+  content: " ";
+  display: block;
+  margin: 10px 0;
+}
