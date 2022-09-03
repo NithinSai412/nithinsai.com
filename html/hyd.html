@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places To Visit In Hyderabad</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;500;600;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            list-style: none;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            scroll-padding-top: 3.5rem;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            padding: 7px 15%;
+            transition-duration: .3s;
+            background-color: white;
+        }
+
+        header.sticky {
+            padding: 7px 10%;
+            background: black;
+        }
+
+        .sticky .navbar a {
+            color: white
+        }
+
+        .sticky .logo {
+            color: white;
+        }
+
+        .sticky .navbar a:hover {
+            color: white;
+        }
+
+        .sticky #menu-icon {
+            color: white
+        }
+
+        .logo {
+            color: var(--text-color);
+            font-family: 'Dancing Script', cursive;
+            ;
+            font-size: 40px;
+            font-weight: 550;
+            letter-spacing: 1px;
+        }
+
+        .logo:hover {
+            transform: translateY(-3px);
+        }
+
+        .navbar {
+            display: flex;
+        }
+
+        .navbar li {
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .navbar a {
+            color: black;
+            font-weight: 400;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+
+        .navbar a:hover {
+            color: red;
+        }
+
+        #menu-icon {
+            font-size: 32px;
+            color: black;
+            z-index: 100001;
+            cursor: pointer;
+            display: none;
+        }
+
+        .main-title {
+            max-width: 100%;
+            height: auto;
+            background: url("../img/IMG_0195-1.jpg") no-repeat center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .main-title p {
+            width: 70%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, .5);
+            font-size: 50px;
+        }
+
+        /* Scroll Animation*/
+        .scroll-down {
+            height: 50px;
+            width: 30px;
+            border: 2px solid white;
+            position: absolute;
+            left: 50%;
+            bottom: 40px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .scroll-down::before,
+        .scroll-down::after {
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            height: 10px;
+            width: 10px;
+            transform: translate(-50%, -100%) rotate(45deg);
+            border: 2px solid white;
+            border-top: transparent;
+            border-left: transparent;
+            animation: scroll-down 1s ease-in-out infinite;
+        }
+
+        .scroll-down::before {
+            top: 30%;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes scroll-down {
+            0% {
+                /* top:20%; */
+                opacity: 0;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 90%;
+                opacity: 0;
+            }
+        }
+
+        .center p {
+            padding-top: 5px;
+            text-align: justify;
+            padding-bottom: 5px;
+        }
+
+        .center {
+            margin: auto;
+            width: 70%;
+            padding: 10px;
+        }
+
+        .center h3 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: black;
+        }
+
+        .show {
+            padding: 10px 15%;
+        }
+
+        .center b {
+            font-weight: 600;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+            grid-gap: 2rem;
+            align-items: center;
+            margin-top: 4.5rem;
+            cursor: pointer;
+        }
+
+        .box img {
+            max-width: 100%;
+            width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: all .30s;
+        }
+
+        .box h5 {
+            font-weight: 150;
+        }
+
+        .box img:hover {
+            transform: scale(1.1);
+        }
+
+        .box p {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        @media(max-width: 1270px) {
+
+            header {
+                padding: 18px 4%;
+                transition: .2s;
+            }
+
+            header.sticky {
+                padding: 10px 4%;
+                transition: .2s;
+            }
+
+            #menu-icon {
+                display: initial;
+            }
+
+
+            .navbar {
+                position: absolute;
+                top: -700px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: black;
+                text-align: left;
+                transition: all .30s;
+            }
+
+            .navbar a {
+                color: white;
+                display: block;
+                padding: 1.1rem;
+                margin: 1.3rem;
+                border-left: 2px solid white;
+                border-right: 2px solid white;
+
+                border-radius: 10px;
+            }
+
+            .navbar a:hover {
+                background-color: black;
+            }
+
+            .navbar a:after {
+                display: none;
+            }
+
+            .navbar li {
+                color: white;
+            }
+
+            .navbar.active {
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--Header is from here-->
+    <header>
+        <a href="#" class="logo">Nithin</a>
+        <div class="bx bx-menu" id="menu-icon"></div>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="../index.html" target="_main">Blogs</a></li>
+            <li><a href="../index.html" tager="_main">About</a></li>
+        </ul>
+
+    </header>
+    <!--Home page for blog-->
+    <section>
+        <div class="main-title">
+            <p>Best Places To Visit In Hyderabad</p>
+        </div>
+        <div class="scroll-down"></div>
+    </section>
+
+    <!--Main Content-->
+
+    <section>
+        <div class="center">
+            <h3>Hyderabad- The City Of Many Names</h3>
+            <p>
+                Covering over 650 sq. Kilometers, Hyderabad was estabilshed by Quli Qutb Shah in the year 1591 on the
+                banks of Moosi river that orginates in the Ananthagiri hills. The 4th most populous city in India, This
+                metro city houses over 10 million people. Hyderabad is a city that has people belonging to various
+                religions and cultural backgrounds live here. This diverse city has many beautiful places you can visit.
+                This city is a place worth visiting at least once in a lifetime as there are many tourism palces to
+                visit in Hyderabad, from families, young peope, children to senior citizens. In fact, it is impossible
+                for anyone to soak in the charms which the city has to offer in a limited time span.
+                Check out this article to about these places.
+            </p>
+        </div>
+    </section>
+
+
+    <section class="show">
+
+        <div class="content">
+            <div class="box">
+                <img
+                    src="https://cdn.theculturetrip.com/wp-content/uploads/2016/06/24498998325_f451c67aae_o-650x433.jpg">
+                <p style="color:#2ecc71;">Charminar</p>
+                <h5> The most populor tourist attraction of telangana and Hyderabad is Charminar. Built in the year 1591
+                    by Quli Qutb Shah the founder of Hyderabad. Standing at 160ft tall this structure is beautiful to
+                    visit in the evenings.</h5>
+            </div>
+
+            <div class="box">
+                <img
+                    src="https://munsifdaily.in/wp-content/uploads/sites/7/2021/08/GOLCONDA-FORT-INDEPENDENCE--650x433.jpg">
+                <p style="color:#2ecc71;">Golconda Fort</p>
+                <h5>Just 11 km away from the city, the architectural marvel Golconda Fort is well connected to the rest
+                    of the city. Built by Qutub Shahi Kings, this fort presents an impressive structure, with eight
+                    gates and 87 bastions.
+
+                </h5>
+            </div>
+
+            <div class="box">
+                <img src="../img/1563656093_chowmahalla-palace1 (1).jpg">
+                <p style="color:#2ecc71;">Chowmahalla Palace</p>
+                <h5>Chowmahalla Palace, with literal meaning of ‘four palace's in Urdu language was built in the 18th
+                    century. It was during the reign of fifth Nizam, Afzar-ud-Daulah, Asaf Jav V, from 1857 to 1869,
+                    that the palace was completed.</h5>
+            </div>
+
+            <div class="box">
+                <img src="../img/hussain-sagar-lake (1).jpg">
+                <p style="color:#2ecc71;">Hussain Sagar Lake</p>
+                <h5>Connecting the twin cities, Hussain Sagar Lake boasts of being the largest artificial lake in Asia.
+                    On the tributary of Musi River, it was excavated during Ibrahim Quli Qutub Shah's reign, in 1562 AD.
+                    It has got its name after Hussain Shah Wali.</h5>
+            </div>
+
+            <div class="box">
+                <img src="../img/qutub-shahi-tombs-hyderabad-india-47300545 (1).jpg">
+                <p style="color:#2ecc71;">Qutub Shahi Tombs</p>
+                <h5>Constructed with grey granite, these quadrangular structure with dome shape roofs are ornamented
+                    with beautiful designs. The garden ‘Ibrahim Bagh’ which surrounds the tombs is popular as picnic
+                    spots.</h5>
+            </div>
+
+            <div class="box">
+                <img src="../img/Birla_Mandir (1).jpg">
+                <p style="color:#2ecc71;">Birla Mandir</p>
+                <h5>Made from 2000 tonnes of marbel this temple has 11 ft. tall statue of Lord Lakshminarayana with a
+                    magnificent lotus carved around it. It also has separate shrines for deities such as Venkateswara,
+                    'Padmavati' and 'Andal' as well.</h5>
+            </div>
+
+            <div class="box">
+                <img src="https://rmihyd.files.wordpress.com/2012/04/salarjung-icon.jpg">
+                <p style="color:#2ecc71;">Salar Jung Museum</p>
+                <h5>At the banks of Musi River, Salar Jung Museum is located. With an impressive collection of 43000 art
+                    objects, 9000 manuscripts and 47000 printed books, it is considered to be one of the biggest one-man
+                    collections of the world.</h5>
+            </div>
+
+            <div class="box">
+                <img src="../img/sanghi-temple-hyderabad (1).jpg">
+                <p style="color:#2ecc71;">Sanghi Temple</p>
+                <h5>About 25 km away from Hyderabad, Sanghi Temple is located on the hillock Paramanand Giri. Dedicated
+                    to the Lord Venkateshwara, the architecture of this temple is based on the Chola-Chalukya
+                    architectural style.</h5>
+            </div>
+
+            <div class="box">
+                <img src="https://www.nearbylocation.in/wp-content/uploads/2018/02/Kamla-Nehru-zoo-ahmedabad.jpg">
+                <p style="color:#2ecc71;">Nehru Zoo Park</p>
+                <h5>Located near the near Mir Alam Tank of Hyderabad with a vast area of 380 acres. Boasting of about
+                    1,500 species of birds, animals and reptiles this largest zoo in India is run by the Forest
+                    department, Government of Andhra Pradesh.</h5>
+            </div>
+
+            <div class="box">
+                <img src="https://static.toiimg.com/photo/msid-24924432,width-96,height-65.cms">
+                <p style="color:#2ecc71;">Mecca Masjid</p>
+                <h5>In 1617 it was built by Sultan Muhammad Quli Qutub Shah, although the construction was completed in
+                    1694 by the Mughal Emperor Aurangzeb. With a height of almost 75 feet and dimensions of 220 feet by
+                    180 feet, it can easily accommodate about 10,000 devotees.</h5>
+            </div>
+
+            <div class="box">
+                <img src="../img/birla-science-museum-hyderabad-entryfee-timings-tour-package-header (1).jpg">
+                <p style="color:#2ecc71;">Birla Planitorium</p>
+                <h5>This planetarium offers four sections, each offering a unique opportunity to explore the unknown.
+                    Interactive science centre, Window on Science, Archaeology Center and the Nirmala Birla Art Gallery
+                    and Dinosaurium are the four section of the planetarium.</h5>
+            </div>
+    </section>
+
+
+
+    <footer>
+        <a href="#" class="logo" style="color:white ;">Nithin</a>
+    </footer>
+
+    <script src="../js/scipt.js"></script>
+
+</body>
+
+</html>
