@@ -345,6 +345,15 @@ header.sticky{
 }
 
 @media(max-width: 1270px){
+    
+    .main-heading{
+        font-size: 12vw;
+    }
+
+    #hello p{
+        font-size: 5vw;
+    }
+    
     .home{
         height: 85vh;
     }
