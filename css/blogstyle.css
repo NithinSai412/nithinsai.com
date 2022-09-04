@@ -201,6 +201,10 @@ footer {
 
 
 @media(max-width: 1270px) {
+  
+  .main-title {
+     font-size: 10vw;
+   }
 
   header {
     padding: 18px 4%;
