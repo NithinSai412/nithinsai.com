@@ -187,6 +187,7 @@ section {
 }
 
 .about-text p {
+    justify-content: center;
     font-size: 15px;
     letter-spacing: 1px;
     line-height: 28px;
