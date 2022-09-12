@@ -1,225 +1,612 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nithin's Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.5rem;
+}
 
-</head>
-<body>
-    <!-- Header Starts from here-->
-    <header>
-        <a href = "#" class="logo">BEGINSEL</a>
-        <div class = "bx bx-menu" id = "menu-icon"></div>
-        <ul class = "navbar">
-            <li><a href = "#home">Home</a></li>
-            <li><a href = "#about">About Me</a></li>
-            <li><a href = "#projects">My Projects</a></li>
-            <li><a href = "#blogs">My Blogs</a></li>
-        </ul>
-        <a href="#talk" class = "h-btn">Wanna talk?</a>
-    </header>
+:root {
+    --text-color: #fff;
+    --second-color: #c6c9d8bf;
+    --main-color: #2ecc71;
+    --big-font: 5.3rem;
+    --h2-font: 4.2rem;
+    --p-font: 1.1rem;
+}
 
-    <!-- Home Page-->
+body {
+    background: #050B21;
+    color: var(--text-color);
+}
 
-     <section class = "home" id="home">
-        <div id ="hello">
-            <h1 class="main-heading">Hello<span class ="input" style="color:#2ecc71;"></span></h1>
-            <p>I am Bazaru Venkata Sai Nithin</p>
-            <a class="social" href="https://www.linkedin.com/in/nithin-bazaru/" target="_main"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a class = "social" href="https://github.com/NithinSai412" target="_main"><i class="fa-brands fa-square-github"></i></a>
-            <a class="social" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=bvsnithin412@gmail.com&amp;su=Get in touch!" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-        </div>
-        <div class="scroll-down"></div>
-        
-     </section>
-     <script src="js/scipt.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-     <script>
-        var typed = new Typed(".input",{
-            strings:[" World!"," Mundo!"," Welt!"],
-            typeSpeed: 120, backSpeed: 120, loop: true
-        });
-     </script>
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 15px 15%;
+    transition-duration: .3s;
+}
 
-     <!-- Start About-->
+.logo {
+    color: var(--text-color);
+    font-size: 25px;
+    font-weight: 550;
+    letter-spacing: 1px;
+}
 
-    <section class = "about" id="about">
-         <div class = "about-img">
-            <a href="https://www.linkedin.com/in/nithin-bazaru/" target="_blank">
-            <img src = "img/IMG20220104172026-01.jpg">
-            </a>
-         </div>
-         <div class ="about-text">
-            <h2 style="color:#2ecc71;">About Me</h2>
-            <p>I am a Diligent learner who loves challenges and problem-solving. Interested in IoT and Machine Learning. Punctual with a desire to always improve and apply my skills towards working efficiently. I am committed to learning and self-development so that I can consistently achieve better results. I also love taking pictures</p>
-         </div>
-     </section>
+.logo:hover {
+    transform: translateY(-2px);
+}
 
-     <!--projects-->
-     <section class="projects" id="projects">
-        <div class="center">
-            <h2>My Projects</h2>
-            <p>I have worked in Domains of Machine Learning, Internet of Things and Web-development. Here are the details about the projects I have done.</p>
-        </div>
+.navbar {
+    display: flex;
+}
 
-        <div class="project-content">
-            <div class = "box">
-                <a href="https://github.com/NithinSai412/Heart-Rate-Detection" target="_main"><img src = "img/heart.jpg"></a>
-                <p style="color:#2ecc71;">Internet of Things</p>
-                <h5> A Heart Rate Monitoring system developed using IOT technology.</h5>
-            </div>
+.navbar li {
+    position: relative;
+    padding-left: 10px;
+}
 
-            <div class = "box">
-                <img src = "img/iv.jpg">
-                <p style="color:#2ecc71;">Internet of Things</p>
-                <h5>A Saline Monitoring system using IOT Technology for hospitals.</h5>
-           </div>
+.navbar a {
+    color: var(--text-color);
+    font-weight: 100;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
 
-           <div class = "box">
-                <img src = "img/kidney.jpg">
-                <p style="color:#2ecc71;">Machine Learning</p>
-                <h5>Chronic Kidney Disease prediction using Machine Learning. </h5>
-            </div>
-           
-            <div class = "box">
-                <img src = "img/pne.jpg">
-                <p style="color:#2ecc71;">Machine Learning</p>
-                <h5>Pneumonia Detection through Chest X-Ray Scans </h5>
-           </div>
-           
-           <div class = "box">
-                <a href="https://letsplaythegameyeahhuuu.on.drv.tw/www.snakegame.io/" target="_blank"><img src = "img/snake.jpg"></a>
-                <p style="color:#2ecc71;">HTML, CSS & JavaScript</p>
-                <h5>A Fun Snake Game made using HTML, CSS & JS</h5>
-            </div>
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    left: 0;
+    bottom: -4px;
+    transition: ease 0.4s;
+}
 
-            <div class = "box">
-                <a href="https://codigo-online.netlify.app/" target="_blank"><img src = "https://www.howtogeek.com/wp-content/uploads/2021/09/html-text-computer.png?trim=1,1&bg-color=000&pad=1,1"></a>
-                <p style="color:#2ecc71;">HTML, CSS & JavaScript</p>
-                <h5>Codigo Online - An online code editor for testing HTML, CSS, and JS code snippets</h5>
-            </div>
+.navbar a:hover::after {
+    width: 100%;
+}
 
-        </div>
-     </section>
+#menu-icon {
+    font-size: 32px;
+    color: var(--text-color);
+    z-index: 100001;
+    cursor: pointer;
+    display: none;
+}
 
-     <!--Programming Langugaes-->
-     <section class = "skills">
-        <div class = "center">
-            <h2>Skills</h2>
-        </div>
-        <div class = "skill-img">
-            <img src="img/icons8-java-75.png">
-            <img src="img/icons8-python-75.png">
-            <img src = "img/icons8-sql-75.png">
-            <img src="img/icons8-html-5-75.png">
-            <img src="img/icons8-javascript-75.png">
-            <img src = "img/icons8-css3-75.png">
-        </div>
-        <!--Domains-->    
-        <div class = "center">
-            <h2>Domains</h2>
-        </div>
-        <div class = "domains">
-            <div>
-                <img src="img/icons8-machine-96.png">
-                <p>Machine Learning</p>
-            </div>
-            <div>
-                <img src="img/icons8-iot-96 (1).png">
-                <p>Internet Of Things</p>
-            </div>
-            <div>
-                <img src = "img/icons8-coding-96.png">
-                <p>Front End Web Dev</p>
-            </div>
-        </div>
-     </section>
+.h-btn {
+    padding: 0 20px;
+    height: 40px;
+    display: 'inline-block';
+    line-height: 42px;
+    background: #2ecc71;
+    color: var(--text-color);
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 550;
+    letter-spacing: 1px;
+    transition: all .4s;
+}
 
-     <!--Blogs-->
-     <section id="blogs" class="blogs">
-        <div class="center">
-            <h2>My Blogs</h2>
-        </div>
+.h-btn:hover {
+    transform: translateY(-5px);
+}
 
-        <div class = "blog-container">
-            <div class = "blog-box">
-                <div class="blog-img">
-                    <img src="img/rsz_oats.jpg">
-                </div>
-                <div class="blog-text">
-                    <a href="#" class="blog-title">
-                        Why You Should Be Eating Oats!?
-                    </a>
-                    <p>
-                        Cereal grain
-                        that is commonly liked by all the people who love being fit.
-                    </p>
-                    <a href="/html/oats.html" target="_main">Read More</a>
-                </div>
-            </div>
+section {
+    padding: 120px 15%;
+}
 
-            <div class = "blog-box">
-                <div class="blog-img">
-                    <img src="img/charminar (1).jpg">
-                </div>
-                <div class="blog-text">
-                    <a href="#" class="blog-title">
-                        Best Places to Visit in Hyderabad
-                    </a>
-                    <p>
-                       The city of pearls and a major center for India's tech industry. 
-                    </p>
-                    <a href="html/hyd.html" target="_main" class="read-more">Read More</a>
-                </div>
-            </div>
+.home {
+    max-width: 100%;
+    height: auto;
+    background: url('../img/wp6152856-minimalistic-qhd-wallpapers.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
 
-            <div class = "blog-box">
-                <div class="blog-img">
-                    <img src="img/seven_tt_4320x1080 (1).jpg">
-                </div>
-                <div class="blog-text">
-                    <a href="#" class="blog-title">
-                        Is Se7en best thriller ever made?
-                    </a>
-                    <p>
-                        David Fincher's se7en is a pinnacle of film making of thriller genre.
-                    </p>
-                    <a href="/html/seven.html" target="_main">Read More</a>
-                </div>
-            </div>
+#hello {
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
 
-        </div>
+.main-heading {
+    font-size: 55px;
+    margin-bottom: -16px;
+}
 
-     </section>
+#hello p {
+    margin-top: 0px;
+    font-size: 25px;
+    font-weight: 600;
+}
 
-     <!--Contact-->
-     <section class = "contact" id = "talk">
-        <div class = "c-form">
-            <h2>Let's Talk</h2>
-            <form action="https://formspree.io/f/xoqbjveo" method="POST">
-                <input type ="" placeholder="Your Name" required>
-                <input type ="email" name="" id="" placeholder="Your emailid" required>
-                <input type = "" placeholder="Write a subject" required>
-                <textarea name = "" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-                <input type = "submit" name="" value="submit" class="send">
-            </form>
-        </div>
+.social {
+    width: 37px;
+    height: 37px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #eee;
+    border-radius: 50%;
+    background-color: rgb(16, 0, 0);
+    margin-left: 10px;
+}
 
-        <div class="contact-img">
-            <img src = "img/me.jpg" width="464px" height="348px">
-        </div>
-     </section>
+.about {
+    background-image: url('../img/abstract-stripes-golden-lines-diagonal-overlap-on-black-background-luxury-stryle-free-vector.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    grid-gap: 2rem;
+}
 
-     <footer>
-        © Bazaru Venkata Sai Nithin All Rights Reserved.
-     </footer>
-</body>
-</html>
+.about-img img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text h2 {
+    font-weight: 600;
+    font-size: var(--h2-font);
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 15px;
+    letter-spacing: 1px;
+    line-height: 28px;
+    max-width: 590px;
+    margin-bottom: 45px;
+}
+
+header.sticky {
+    padding: 7px 10%;
+    background: #2ecc71;
+}
+
+
+.sticky .h-btn {
+    background: white;
+    color: #000;
+}
+
+.center {
+    text-align: center;
+}
+
+.center h2 {
+    color: #2ecc71;
+    font-weight: 600;
+    font-size: var(--h2-font);
+}
+
+.center p {
+    color: white;
+    letter-spacing: 1px;
+    line-height: 28px;
+    font-size: 15px;
+}
+
+.projects {
+    background-color: #201f25;
+}
+
+.project-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    grid-gap: 2rem;
+    align-items: center;
+    margin-top: 4.5rem;
+    cursor: pointer;
+}
+
+.box img {
+    max-width: 100%;
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: all .30s;
+}
+
+.box h5 {
+    font-weight: 150;
+}
+
+.box img:hover {
+    transform: scale(1.1);
+}
+
+.skills {
+    background-image: url('../img/6346.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+
+}
+
+.skill-img {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+    grid-gap: 1rem;
+    align-items: center;
+    margin-top: 4.5rem;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    transition: all .30s;
+}
+
+.skill-img:hover {
+    transform: scale(1.1);
+}
+
+.domains {
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-gap: 1rem;
+    align-items: center;
+    margin-top: 4.5rem;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+
+.contact {
+    background: #201f25;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    align-items: center;
+    grid-gap: 3rem;
+}
+
+.contact-img img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.c-form h2 {
+    color: #e1ebe5;
+    font-weight: 600;
+    font-size: var(--h2-font);
+    margin-bottom: 10px;
+}
+
+.c-form form {
+    position: relative;
+}
+
+.c-form form input,
+form textarea {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: rgb(55, 53, 53);
+    color: white;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+}
+
+.c-form form .send {
+    display: inline-block;
+    background: #2ecc71;
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+    border-radius: 25px;
+    width: 100px;
+    transition: ease .4s;
+    text-transform: uppercase;
+}
+
+.c-form form .send:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+@media(max-width: 1270px) {
+    header {
+        padding: 18px 4%;
+        transition: .2s;
+    }
+
+    header.sticky {
+        padding: 10px 4%;
+        transition: .2s;
+    }
+
+    section {
+        padding: 80px 4%;
+        transition: .2s;
+    }
+
+    :root {
+        --big-font: 4.8rem;
+        --h2-font: 3.8rem;
+        --p-font: 1rem;
+        transition: .2s;
+    }
+}
+
+@media(max-width: 1270px) {
+
+    .main-heading {
+        font-size: 12vw;
+    }
+
+    #hello p {
+        font-size: 5vw;
+    }
+
+    .home {
+        height: 85vh;
+    }
+
+    #menu-icon {
+        display: initial;
+    }
+
+    .navbar {
+        position: absolute;
+        top: -700px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: black;
+        text-align: left;
+        transition: all .30s;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 1.1rem;
+        margin: 1.3rem;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+
+    .navbar a:hover {
+        background-color: var(--main-color);
+    }
+
+    .navbar a:after {
+        display: none;
+    }
+
+    .navbar.active {
+        top: 100%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .about-img {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .contact {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-img {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .c-form {
+        order: 2;
+    }
+}
+
+/** The Scroll Animation**/
+
+.scroll-down {
+    height: 50px;
+    width: 30px;
+    border: 2px solid white;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.scroll-down::before,
+.scroll-down::after {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border: 2px solid white;
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::before {
+    top: 30%;
+    animation-delay: 0.3s;
+}
+
+@keyframes scroll-down {
+    0% {
+        /* top:20%; */
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 90%;
+        opacity: 0;
+    }
+}
+
+
+/** Blogs page **/
+
+#blogs {
+    background-color: #201f25;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    flex-wrap: wrap;
+}
+
+.blog-box {
+    width: 350px;
+    background-color: #ffffff;
+    border: 1px solid 201f25;
+    margin: 20px 20px;
+    border-radius: 5%;
+}
+
+.blog-img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-img img {
+    margin-top: -1px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 17px;
+}
+
+.blog-text {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-text .blog-title {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #272727;
+}
+
+.blog-text p {
+    color: #9b9b9b;
+    font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 20px 0px;
+}
+
+.blog-text a {
+    color: #0f0f0f;
+}
+
+.blog-text a:hover {
+    color: #2ecc71;
+    transition: all ease 0.3s;
+    transform: translateY(-3px);
+}
+
+.blog-box:hover {
+    transform: translateY(-5px);
+}
+
+.blog-box:hover {
+    box-shadow: 0 0 8px #2ecc71;
+}
+
+
+@media(max-width:1250px) {
+
+    .blog-box {
+        width: 300px;
+    }
+}
+
+@media(max-width:1100px) {
+    .blog-box {
+        width: 70%;
+    }
+}
+
+@media(max-width:550px) {
+
+    .blog-box {
+        margin: 20px 10px;
+        width: 100%;
+    }
+
+    #blog {
+        padding: 20px;
+    }
+}
+
+
+footer {
+    background-color: black;
+    color: rgb(85, 79, 79);
+    padding: 15px;
+    text-align: center;
+}
